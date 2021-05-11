@@ -58,7 +58,7 @@ item（references型）（商品）
 |    Column      |    Type     |      Options       |
 | -------------- | ----------- | ------------------ |
 | post_code      | string      | null: false        |
-| buyer          | integer     | null: false        |
+| buyer | references | foreign_key: true |
 | city           | string      | null: false        |
 | address        | string      | null: false        |    
 | building_name  | string      |                    |
