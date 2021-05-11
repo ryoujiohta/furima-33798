@@ -58,7 +58,7 @@ item（references型）（商品）
 |    Column      |    Type     |      Options       |
 | -------------- | ----------- | ------------------ |
 | post_code      | string      | null: false        |
-| area_id     | integer     | null: false        |
+| buyer          | integer     | null: false        |
 | city           | string      | null: false        |
 | address        | string      | null: false        |    
 | building_name  | string      |                    |
@@ -66,5 +66,5 @@ item（references型）（商品）
 | purchase       | references  | foreign_key: true  |
 
 ### Association
-belongs_to :buyers
+belongs_to :buyer
 
