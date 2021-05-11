@@ -19,7 +19,7 @@
                 <mxCell id="36" value="deliveries（配達）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="20" y="420" width="300" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="post_code（string型、NOT NULL）（郵便番号）&#10;&#10;area_id（integer型、NOT NULL）（県）&#10;&#10;city（string型、NOT NULL）（市）&#10;&#10;address（string型、NOT NULL）（番地）&#10;&#10;building_name（string型）（建物名）&#10;&#10;phone_number（string型、NOT NULL）（電話番号）&#10;&#10;purchase（references型）（購入）" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="36" vertex="1">
+                <mxCell id="37" value="post_code（string型、NOT NULL）（郵便番号）&#10;&#10;buyer（references、foreign_key: true） （県）&#10;&#10;city（string型、NOT NULL）（市）&#10;&#10;address（string型、NOT NULL）（番地）&#10;&#10;building_name（string型）（建物名）&#10;&#10;phone_number（string型、NOT NULL）（電話番号）&#10;&#10;purchase（references型）（購入）" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="36" vertex="1">
                     <mxGeometry y="30" width="300" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="buyers（購入）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">

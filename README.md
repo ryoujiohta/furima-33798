@@ -58,12 +58,12 @@ item（references型）（商品）
 |    Column      |    Type     |      Options       |
 | -------------- | ----------- | ------------------ |
 | post_code      | string      | null: false        |
-| buyer | references | foreign_key: true |
+| prefecture_id  | integer     | null: false        |
 | city           | string      | null: false        |
 | address        | string      | null: false        |    
 | building_name  | string      |                    |
 | phone_number   | string      | null: false        |
-| purchase       | references  | foreign_key: true  |
+| buyer          | references  | foreign_key: true  |
 
 ### Association
 belongs_to :buyer
