@@ -1,6 +1,6 @@
 <mxfile>
     <diagram id="mxM25iJvJ0-bjiCiE_Et" name="ページ1">
-        <mxGraphModel dx="1249" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1077" dy="881" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -19,7 +19,7 @@
                 <mxCell id="36" value="deliveries（配達）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
                     <mxGeometry x="20" y="420" width="300" height="230" as="geometry"/>
                 </mxCell>
-                <mxCell id="37" value="post_code（string型、NOT NULL）（郵便番号）&#10;&#10;prefecture（integer型、NOT NULL）（県）&#10;&#10;city（string型、NOT NULL）（市）&#10;&#10;address（string型、NOT NULL）（番地）&#10;&#10;building_name（string型）（建物名）&#10;&#10;phone_number（string型、NOT NULL）（電話番号）&#10;&#10;purchase（references型）（購入）" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="36" vertex="1">
+                <mxCell id="37" value="post_code（string型、NOT NULL）（郵便番号）&#10;&#10;area_id（integer型、NOT NULL）（県）&#10;&#10;city（string型、NOT NULL）（市）&#10;&#10;address（string型、NOT NULL）（番地）&#10;&#10;building_name（string型）（建物名）&#10;&#10;phone_number（string型、NOT NULL）（電話番号）&#10;&#10;purchase（references型）（購入）" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="36" vertex="1">
                     <mxGeometry y="30" width="300" height="200" as="geometry"/>
                 </mxCell>
                 <mxCell id="38" value="buyers（購入）" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
@@ -52,7 +52,7 @@
                         <mxPoint x="370" y="460" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="54" value="&lt;span style=&quot;color: rgb(74 , 74 , 74) ; font-family: &amp;#34;open sans&amp;#34; , sans-serif ; font-size: 14px ; background-color: rgb(45 , 49 , 58)&quot;&gt;https://gyazo.com/9e11fb5c7a5c6c18c4201898267e0862&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+                <mxCell id="54" value="&lt;span style=&quot;color: rgb(74 , 74 , 74) ; font-family: &amp;#34;open sans&amp;#34; , sans-serif ; font-size: 14px ; background-color: rgb(45 , 49 , 58)&quot;&gt;https://gyazo.com/9e11fb5c7a5c6c18c4201898267e0862&lt;/span&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
                     <mxGeometry x="50" y="790" width="430" height="20" as="geometry"/>
                 </mxCell>
             </root>

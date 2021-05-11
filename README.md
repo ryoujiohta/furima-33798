@@ -32,7 +32,7 @@
 | user           | references  | foreign_key: true  |
 
 ### Association
-- has_one :buyers
+- has_one :buyer
 - belongs_to :user
 
 
@@ -47,7 +47,7 @@ item（references型）（商品）
 
 ### Association
 
-- has_one :deliveries
+- has_one :deliverie
 - belongs_to :item
 - belongs_to :user
 
@@ -58,7 +58,7 @@ item（references型）（商品）
 |    Column      |    Type     |      Options       |
 | -------------- | ----------- | ------------------ |
 | post_code      | string      | null: false        |
-| prefecture     | integer     | null: false        |
+| area_id     | integer     | null: false        |
 | city           | string      | null: false        |
 | address        | string      | null: false        |    
 | building_name  | string      |                    |
