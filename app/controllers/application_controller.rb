@@ -1,7 +1,4 @@
-class ApplicationController < ActionController::Base
-  # ログイン画面に遷移するように実装
-  before_action :authenticate_user!
-  
+class ApplicationController < ActionController::Base  
   # application_controller.rb ファイルにnameカラムの保存を可能とする記述
   before_action :configure_permitted_parameters, if: :devise_controller?
 
