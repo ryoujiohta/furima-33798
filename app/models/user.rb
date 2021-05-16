@@ -18,11 +18,8 @@ class User < ApplicationRecord
         #誕生日
         validates :birth_day
 
-        #メールアドレス
-        validates :email, uniqueness: { case_sensitive: true }
-
         #パスワード
-        validates :encrypted_password,:password,:password_confirmation,length:{minimum:6},format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
+        validates :password,format:{with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/}
 
         #名字と名前を必須にさせる
         #漢字・カタカナ・ひらがなでの入力に制限
