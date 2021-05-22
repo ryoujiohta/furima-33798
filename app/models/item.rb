@@ -9,14 +9,14 @@ class Item < ApplicationRecord
   belongs_to :prefecture
 
   with_options presence: true do
-  #商品名、説明、画像、価格なしだと保存できないようにする
+    # 商品名、説明、画像、価格なしだと保存できないようにする
     validates :name
     validates :description
     validates :image
-    #priceは半角数字＋300~9999999でないと保存できないようにする
-    validates :price, inclusion: { in: 300..9_999_999 }, format: { with: /\A[0-9]+\z/ } 
+    # priceは半角数字＋300~9999999でないと保存できないようにする
+    validates :price, inclusion: { in: 300..9_999_999 }, format: { with: /\A[0-9]+\z/ }
 
-    #activehashに対してカラでは保存できないようにする
+    # activehashに対してカラでは保存できないようにする
     validates :category_id
     validates :condition_id
     validates :burden_id

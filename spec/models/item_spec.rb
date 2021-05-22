@@ -13,13 +13,12 @@ RSpec.describe Item, type: :model do
         end
 
         it 'priceが半角数字であれば出品できる' do
-          @item.price = 300000
+          @item.price = 300_000
           expect(@item).to be_valid
         end
       end
 
       context '商品が出品できない場合' do
-
         it 'image(商品画像)が空だと出品できない' do
           @item.image = nil
           @item.valid?
@@ -107,13 +106,13 @@ RSpec.describe Item, type: :model do
         it 'price（販売価格）が¥300~¥9,999,999でないと出品できない' do
           @item.price = 99
           @item.valid?
-          expect(@item.errors.full_messages).to include("Price is not included in the list")
+          expect(@item.errors.full_messages).to include('Price is not included in the list')
         end
 
         it 'priceが10,000,000以上では登録できないこと' do
-          @item.price = 10000000
+          @item.price = 10_000_000
           @item.valid?
-          expect(@item.errors.full_messages).to include("Price is not included in the list")
+          expect(@item.errors.full_messages).to include('Price is not included in the list')
         end
 
         it 'priceが全角数字だと出品できない' do
@@ -134,18 +133,11 @@ RSpec.describe Item, type: :model do
           expect(@item.errors.full_messages).to include('Price is not included in the list')
         end
 
-        
-
-        
-
-        
-
-        
-
-        
-
-       
-        
+        it 'userが紐付いていない場合は出品できない' do
+          @item.user = nil
+          @item.valid?
+          expect(@item.errors.full_messages).to include('User must exist')
+        end
       end
     end
   end
