@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :item do
     name                  { 'CRベルセルク新台' }
     description           { '2021年新台のCRベルセルク' }
-    price                 { Faker::Address.building_number }
+    price                 { 1000 }
     category_id           { 1 }
     condition_id          { 1 }
     burden_id             { 1 }
