@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:edit, :show, :update]
+  before_action :prevent_url, only: [:edit, :update]
 
   def index
     @items = Item.all.order(created_at: :desc)
@@ -19,10 +21,17 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -30,5 +39,15 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :description, :image, :category_id, :condition_id, :prefecture_id,
                                  :burden_id, :area_id).merge(user_id: current_user.id)
+  end
+
+  # show,edit,updateでの記載まとめ用
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
+  # edit,updateでのまとめ用
+  def prevent_url
+    redirect_to root_path if @item.user_id != current_user.id
   end
 end
