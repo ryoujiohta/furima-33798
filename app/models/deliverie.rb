@@ -1,0 +1,2 @@
+class Deliverie < ApplicationRecord
+end
