@@ -32,14 +32,14 @@ class DeliveriesController < ApplicationController
 
   def prevent_url
     redirect_to root_path if @item.user_id == current_user.id || !@item.buyer.nil?
+  end
 
-    def pay_item
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
-      Payjp::Charge.create(
-        amount: @item.price,
-        card: delivery_params[:token],
-        currency: 'jpy'
-      )
-    end
+  def pay_item
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp::Charge.create(
+      amount: @item.price,
+      card: delivery_params[:token],
+      currency: 'jpy'
+    )
   end
 end

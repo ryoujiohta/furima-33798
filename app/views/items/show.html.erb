@@ -9,7 +9,7 @@
     <div class="item-img-content">
       <%= image_tag @item.image,class:"item-box-img" %>
       <% if @item.buyer.present? %>
-<%# sold outの表示　%>
+<%# sold outの表示%>
       <div class="sold-out">
         <span>Sold Out!!</span> %>
       </div>
@@ -24,7 +24,7 @@
       </span>
     </div>
 
-    <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分ける %>
+    <%# ログインユーザーによる処理分岐 %>
     <% if user_signed_in? && @item.buyer.blank? %>
     <% if current_user.id == @item.user_id %>
 
@@ -32,13 +32,10 @@
     <p class="or-text">or</p>
     <%= link_to "削除", item_path(@item.id), method: :delete, class:"item-destroy" %>
 <% else %>
-    <%# 商品が売れていない場合はこちらを表示 %>
     <%= link_to "購入画面に進む", item_deliveries_path(@item.id), method: :get, class:"item-red-btn"%>
-    <%# //商品が売れていない場合はこちらを表示 %>
 <% end %>
 <% end %>
-
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分ける %>
+    <%# ログインユーザーによる処理分岐 %>
 
     <div class="item-explain-box">
       <span><%= @item.description %></span>

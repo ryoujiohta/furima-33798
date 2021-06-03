@@ -13,6 +13,11 @@ RSpec.describe UserDelivery, type: :model do
       it '必要な情報を適切に入力すると商品の購入ができる' do
         expect(@user_delivery).to be_valid
       end
+
+      it '建物名の記入がなくても登録できること' do
+        @user_delivery.building_name = ''
+        expect(@user_delivery).to be_valid
+      end
     end
 
     context '商品が購入できないとき' do
@@ -100,8 +105,11 @@ RSpec.describe UserDelivery, type: :model do
         expect(@user_delivery.errors.full_messages).to include('Phone number is invalid')
       end
 
-      # end
-      # end
+      it 'phnoe_number（電話番号）が英数混合では登録できないこと' do
+        @user_delivery.phone_number = '080abcd1111'
+        @user_delivery.valid?
+        expect(@user_delivery.errors.full_messages).to include('Phone number is invalid')
+      end
     end
   end
 end
