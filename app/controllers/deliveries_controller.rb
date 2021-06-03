@@ -1,12 +1,11 @@
 class DeliveriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_furima, only: [:index, :create]
-  before_action :prevent_url, only: [:index, :create]    
+  before_action :prevent_url, only: [:index, :create]
 
   def index
     @user_delivery = UserDelivery.new
   end
-
 
   def create
     @user_delivery = UserDelivery.new(delivery_params)
@@ -32,17 +31,15 @@ class DeliveriesController < ApplicationController
   end
 
   def prevent_url
-    if @item.user_id == current_user.id
-      redirect_to root_path
-    end  
+    redirect_to root_path if @item.user_id == current_user.id || !@item.buyer.nil?
 
-  def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    Payjp::Charge.create(
-      amount: @item.price,
-      card: delivery_params[:token],
-      currency: 'jpy'
-    )
-  end
+    def pay_item
+      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp::Charge.create(
+        amount: @item.price,
+        card: delivery_params[:token],
+        currency: 'jpy'
+      )
+    end
   end
 end

@@ -53,6 +53,6 @@ class ItemsController < ApplicationController
 
   # edit,update,destroyでの記載まとめ用
   def prevent_url
-    redirect_to root_path if @item.user_id != current_user.id
+    redirect_to root_path if @item.user_id != current_user.id || !@item.buyer.nil?
   end
 end
